@@ -1,6 +1,9 @@
 import React from 'react';
 import Header from './Header';
 import List from './List';
+import InputItem from './InputItem';
+import SelectItem from './SelectItem';
+import InputItemGroup from './InputItemGroup';
 import '../../css/form-validation.css';
 
 class Form extends React.Component {
@@ -10,155 +13,54 @@ class Form extends React.Component {
 				<Header />
 				<div className="row">
 					<List />
-			      <div className="col-md-8 order-md-1">
-			          <h4 className="mb-3">Billing address</h4>
-			          <form className="needs-validation" noValidate>
-			            <div className="row">
-			              <div className="col-md-6 mb-3">
-			                <label htmlFor="firstName">First name</label>
-			                <input type="text" className="form-control" id="firstName" placeholder="" defaultValue="" required />
-			                <div className="invalid-feedback">
-			                  Valid first name is required.
-			                </div>
-			              </div>
-			              <div className="col-md-6 mb-3">
-			                <label htmlFor="lastName">Last name</label>
-			                <input type="text" className="form-control" id="lastName" placeholder="" defaultValue="" required />
-			                <div className="invalid-feedback">
-			                  Valid last name is required.
-			                </div>
-			              </div>
-			            </div>
-
-			            <div className="mb-3">
-			              <label htmlFor="username">Username</label>
-			              <div className="input-group">
-			                <div className="input-group-prepend">
-			                  <span className="input-group-text">@</span>
-			                </div>
-			                <input type="text" className="form-control" id="username" placeholder="Username" required />
-			                <div className="invalid-feedback" style={{ width: '100%'}}>
-			                  Your username is required.
-			                </div>
-			              </div>
-			            </div>
-
-			            <div className="mb-3">
-			              <label htmlFor="email">Email <span className="text-muted">(Optional)</span></label>
-			              <input type="email" className="form-control" id="email" placeholder="you@example.com" />
-			              <div className="invalid-feedback">
-			                Please enter a valid email address for shipping updates.
-			              </div>
-			            </div>
-
-			            <div className="mb-3">
-			              <label htmlFor="address">Address</label>
-			              <input type="text" className="form-control" id="address" placeholder="1234 Main St" required />
-			              <div className="invalid-feedback">
-			                Please enter your shipping address.
-			              </div>
-			            </div>
-
-			            <div className="mb-3">
-			              <label htmlFor="address2">Address 2 <span className="text-muted">(Optional)</span></label>
-			              <input type="text" className="form-control" id="address2" placeholder="Apartment or suite" />
-			            </div>
-
-			            <div className="row">
-			              <div className="col-md-5 mb-3">
-			                <label htmlFor="country">Country</label>
-			                <select className="custom-select d-block w-100" id="country" required>
-			                  <option defaultValue="">Choose...</option>
-			                  <option>United States</option>
-			                </select>
-			                <div className="invalid-feedback">
-			                  Please select a valid country.
-			                </div>
-			              </div>
-			              <div className="col-md-4 mb-3">
-			                <label htmlFor="state">State</label>
-			                <select className="custom-select d-block w-100" id="state" required>
-			                  <option defaultValue="">Choose...</option>
-			                  <option>California</option>
-			                </select>
-			                <div className="invalid-feedback">
-			                  Please provide a valid state.
-			                </div>
-			              </div>
-			              <div className="col-md-3 mb-3">
-			                <label htmlFor="zip">Zip</label>
-			                <input type="text" className="form-control" id="zip" placeholder="" required />
-			                <div className="invalid-feedback">
-			                  Zip code required.
-			                </div>
-			              </div>
-			            </div>
-			            <hr className="mb-4" />
-			            <div className="custom-control custom-checkbox">
-			              <input type="checkbox" className="custom-control-input" id="same-address" />
-			              <label className="custom-control-label" htmlFor="same-address">Shipping address is the same as my billing address</label>
-			            </div>
-			            <div className="custom-control custom-checkbox">
-			              <input type="checkbox" className="custom-control-input" id="save-info" />
-			              <label className="custom-control-label" htmlFor="save-info">Save this information for next time</label>
-			            </div>
-			            <hr className="mb-4" />
-
-			            <h4 className="mb-3">Payment</h4>
-
-			            <div className="d-block my-3">
-			              <div className="custom-control custom-radio">
-			                <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" defaultChecked required />
-			                <label className="custom-control-label" htmlFor="credit">Credit card</label>
-			              </div>
-			              <div className="custom-control custom-radio">
-			                <input id="debit" name="paymentMethod" type="radio" className="custom-control-input" required />
-			                <label className="custom-control-label" htmlFor="debit">Debit card</label>
-			              </div>
-			              <div className="custom-control custom-radio">
-			                <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
-			                <label className="custom-control-label" htmlFor="paypal">PayPal</label>
-			              </div>
-			            </div>
-			            <div className="row">
-			              <div className="col-md-6 mb-3">
-			                <label htmlFor="cc-name">Name on card</label>
-			                <input type="text" className="form-control" id="cc-name" placeholder="" required />
-			                <small className="text-muted">Full name as displayed on card</small>
-			                <div className="invalid-feedback">
-			                  Name on card is required
-			                </div>
-			              </div>
-			              <div className="col-md-6 mb-3">
-			                <label htmlFor="cc-number">Credit card number</label>
-			                <input type="text" className="form-control" id="cc-number" placeholder="" required />
-			                <div className="invalid-feedback">
-			                  Credit card number is required
-			                </div>
-			              </div>
-			            </div>
-			            <div className="row">
-			              <div className="col-md-3 mb-3">
-			                <label htmlFor="cc-expiration">Expiration</label>
-			                <input type="text" className="form-control" id="cc-expiration" placeholder="" required />
-			                <div className="invalid-feedback">
-			                  Expiration date required
-			                </div>
-			              </div>
-			              <div className="col-md-3 mb-3">
-			                <label htmlFor="cc-cvv">CVV</label>
-			                <input type="text" className="form-control" id="cc-cvv" placeholder="" required />
-			                <div className="invalid-feedback">
-			                  Security code required
-			                </div>
-			              </div>
-			            </div>
-			            <hr className="mb-4" />
-			            <button className="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
-			          </form>
-			        </div>
-			      </div>
-			    </div>
+					<div className="col-md-8 order-md-1">
+						<form className="needs-validation" noValidate>
+							<h4 className="mb-3">Billing address</h4>
+							<div className="row">
+								<InputItem label={ "First name" } id={"firstName"} invalidText={ "Valid first name is required." } />
+								<InputItem label={ "Last name" } id={"lastName"} invalidText={ "Valid last name is required." } />
+							</div>
+							<InputItemGroup className={ "mb-3" } label={ "Username" } placeholder={ "Username" } invalidText={ "Your username is required" } invalidStyle={ {width: '100%'} } />
+							<InputItem className={ "mb-3" } label={ "Email (Optional)" } type={ "email" } id={"email"} placeholder={ "you@example.com" } invalidText={ "Please enter a valid email address for shipping updates." } required= { false } />
+							<InputItem className={ "mb-3" } label={ "Address" } id={"address"} placeholder={ "1234 Main St" } invalidText={ "Please enter your shipping address." } />
+							<InputItem className={ "mb-3" } label={ "Address 2 (Optional)" } id={"address2"} placeholder={ "Apartment or suite" } invalidText={ "Please enter your shipping address." } required= { false } />
+							<div className="row">
+								<SelectItem className={ "col-md-5 mb-3" } id={ "country" } label={ "Country" } invalidText={ "Please select a valid country." }
+					            	options={[
+					            		{value: "", text: "Choose...", selected: true},
+					            		{value: "US", text: "United States", selected: false}
+					            	]} />
+					            <SelectItem className={ "col-md-4 mb-3" } id={ "state" } label={ "State" } invalidText={ "Please provide a valid state." }
+					            	options={[
+					            		{value: "", text: "Choose...", selected: true},
+					            		{value: "CLF", text: "California", selected: false}
+					            	]} />
+					            <InputItem className={ "col-md-3 mb-3" } label={ "Zip" } id={"zip"} invalidText={ "Zip code required." } required= { true } />
+					        </div>
+							<hr className="mb-4" />
+							<InputItem className={ "custom-control custom-checkbox" } labelClassName={ "custom-control-label" } inputClassName={ "custom-control-input" } label={ "Shipping address is the same as my billing address." } type={ "checkbox" } id={"same-address"} required= { false } />
+							<InputItem className={ "custom-control custom-checkbox" } labelClassName={ "custom-control-label" } inputClassName={ "custom-control-input" } label={ "Save this information for next time." } type={ "checkbox" } id={"save-info"} required= { false } />
+							<hr className="mb-4" />
+							<h4 className="mb-3">Payment</h4>
+							<div className="d-block my-3">
+								<InputItem className={ "custom-control custom-radio" } labelClassName={ "custom-control-label" } inputClassName={ "custom-control-input" } label={ "Credit card" } type={ "radio" } id={"credit"} name={ "paymentMethod" } checked={ true } />
+								<InputItem className={ "custom-control custom-radio" } labelClassName={ "custom-control-label" } inputClassName={ "custom-control-input" } label={ "Debit card" } type={ "radio" } id={"debit"} name={ "paymentMethod" } />
+								<InputItem className={ "custom-control custom-radio" } labelClassName={ "custom-control-label" } inputClassName={ "custom-control-input" } label={ "PayPal" } type={ "radio" } id={"paypal"} name={ "paymentMethod" } />
+							</div>
+							<div className="row">
+								<InputItem className={ "col-md-6 mb-3" } label={ "Name on card" } id={"cc-name"} invalidText={ "Name on card is required." } required= { true } />
+								<InputItem className={ "col-md-6 mb-3" } label={ "Credit card number" } id={"cc-number"} invalidText={ "Credit card number is required." } required= { true } />
+							</div>
+							<div className="row">
+								<InputItem className={ "col-md-3 mb-3" } label={ "Expiration" } id={"cc-expiration"} invalidText={ "Expiration date required." } required= { true } />
+								<InputItem className={ "col-md-3 mb-3" } label={ "CVV" } id={"cc-cvv"} invalidText={ "Security code required." } required= { true } />
+							</div>
+							<hr className="mb-4" />
+							<button className="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+						</form>
+					</div>
+				</div>
+			</div>
     	);
 	}
 }

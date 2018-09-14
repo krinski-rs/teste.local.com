@@ -14,7 +14,7 @@ class List extends React.Component {
 				<ul className="list-group mb-3">
                 {
                 	this.props.itens.map(function(obj, idx){
-                		return <ListItem { ...obj } key key={idx} />
+                		return <ListItem { ...obj } key={idx} />
                 	})
                 }
                 {
@@ -33,7 +33,6 @@ class List extends React.Component {
     	);
 	}
 }
-
 
 List.propTypes = {
 	className: PropTypes.string,
