@@ -7,7 +7,7 @@ class InputItem extends React.Component {
 		return (
 			<div className={ this.props.className }>
 				{
-					(this.props.type == 'text') || (this.props.type == 'email') ?
+					(this.props.type === 'text') || (this.props.type === 'email') ?
 					<label className={ this.props.labelClassName } htmlFor={ this.props.id }>{ this.props.label }</label>
 					:null
 				}
@@ -27,7 +27,7 @@ class InputItem extends React.Component {
 					: null
 				}
 				{
-					(this.props.type != 'text') && (this.props.type != 'email') ?
+					(this.props.type !== 'text') && (this.props.type !== 'email') ?
 					<label className={ this.props.labelClassName } htmlFor={ this.props.id }>{ this.props.label }</label>
 					:null
 				}

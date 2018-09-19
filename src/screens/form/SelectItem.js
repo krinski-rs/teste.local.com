@@ -4,7 +4,7 @@ import InvalidFeedback from './InvalidFeedback';
 
 const Option = (attr) =>
 	(
-		<option value={ attr.value } defaultValue={ attr.selected ? "selected" : false } key={attr. idx}>{ attr.text }</option>
+		<option value={ attr.value } defaultValue={ attr.selected ? "selected" : false } key={attr.idx}>{ attr.text }</option>
 	);
 class SelectItem extends React.Component {
 	render() {
