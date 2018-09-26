@@ -1,18 +1,17 @@
 import React from 'react';
-import NavBar from '../NavBar';
+import NavBar from '../../NavBar';
 import Content from './Content';
 
-import './css/home.css';
 
-class Container extends React.Component {
+class Home extends React.Component {
 	render() {
 		return (
 			<div id="container-fluid">
 				<NavBar />
-				<Content />
+				<Content title={ "Home Cliente" } />
 			</div>
     	);
 	}
 }
 
-export default Container;
+export default Home;
