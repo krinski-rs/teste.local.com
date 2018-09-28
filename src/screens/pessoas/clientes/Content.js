@@ -1,15 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Menu from '../../Menu';
 
 class Content extends React.Component {
-	
-	constructor(props){
-		super(props);
-	}
 	
 	render() {
 		return (

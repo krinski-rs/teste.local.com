@@ -1,14 +1,6 @@
 import React from 'react';
-import {
-	  BrowserRouter as Router,
-	  Route,
-	  Link,
-	  Switch,
-	  Redirect
-	} from "react-router-dom";
 import PropTypes from 'prop-types';
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MenuItem from './MenuItem';
 import MenuItemList from './MenuItemList';
 
