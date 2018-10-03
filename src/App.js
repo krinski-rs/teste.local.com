@@ -4,10 +4,13 @@ import {
 	Route,
 	Switch
 } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 import Home from './screens/home/Home';
 import HomeCliente from './screens/pessoas/clientes/Home';
 import NoMatch from './components/NoMatch';
 import './css/bootstrap/css/bootstrap.css';
+
+const history = createBrowserHistory();
 
 class App extends Component {
 	render() {
